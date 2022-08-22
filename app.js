@@ -4,9 +4,11 @@ const port = process.env.PORT || 3000
 const bodyparser = require('body-parser')
 const session = require('express-session')
 const {v4: uuidv4} = require('uuid')
-const router = require('./routes')
+const authRoute = require('./routes/auth')
+const productRoute = require('./routes/products')
 const mongoose = require('mongoose')
 const User = require('./models/User')
+const Products = require('./models/Products')
 
 mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).then(
     () => {
@@ -25,7 +27,8 @@ mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).th
         //     saveUninitialized: true
         // }))
 
-        app.use('/api', router)
+        app.use('/api/auth', authRoute)
+        app.use('/api/products', productRoute)
 
         // app.get('/dashboard', (req, res) => {
         //     User.find({}, (err, users) => {
@@ -55,11 +58,15 @@ mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).th
             res.render('register', {title: 'IXNote Enterprise | Register'})
         })
 
+        app.get('/add_product', (req, res) => {
+            res.render('create_products', {title: 'IXNote Enterprise | Add Products'})
+        })
+
         app.listen(port, () => {
             console.log('listening to the server on http://localhost:3000')
         })
     }
-).catch(() => {
-    console.log('Database Connection Failed')
+).catch((err) => {
+    console.log('Database Connection Failed:', err)
 })
 
