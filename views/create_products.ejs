@@ -1,43 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=locals.title ? title:'Add Product | IXNote Enterprise'  %></title>
-</head>
-<body>
-    <div class="hero-bg">
-        <div class="top-right">
-
-            <h1>Add Product</h1>
-            <form action="/api/createProduct" method="POST">
-                <div class="input-field">
-                    <label for="item">Item</label>
-                    <input type="text" name="item" id="item">
-                </div>
-                <div class="input-field">
-                    <label for="price">Price</label>
-                    <input type="number" name="price" id="price">
-                </div>
-                <div class="input-field">
-                    <label for="quantity">Quantity</label>
-                    <input type="number" name="Quantity" id="Quantity">
-                </div>
-                <div class="input-field">
-                    <label for="date">Expiring Date</label>
-                    <input type="datetime-local" name="date" id="date">
-                </div>
-                <div class="btn">
-                    <input type="submit" value="Register">
-                </div>
-            </form>
-    
-        </div>
-    </div>    
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,19 +10,19 @@
 <body>
     <body class="bg-light">
 
-        <div class="container">
+        <div class="container" >
           <div class="py-5 text-center">
             <H2>Add Product</H2>
           </div>
     
           <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
-              <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <!-- <div class="col-md-4 order-md-2 mb-4" > -->
+              <!-- <h4 class="d-flex justify-content-between align-items-center mb-3"> -->
                 <!-- <span class="text-muted">Your Products</span> -->
-                <span class="badge badge-secondary badge-pill">3</span>
-              </h4>
+                <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+              <!-- </h4> -->
 
-            </div>
+            <!-- </div> -->
             <div class="col-md-8 order-md-1">
               <h4 class="mb-3">Product Details</h4>
               <form class="needs-validation" action="/api/products/createProduct" novalidate>
