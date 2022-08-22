@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%=locals.title ? title:'Login | IXNote Enterprise'  %}</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="icon" href="" type="image/icon type">
+</head>
+<body>
+    <div class="hero-bg">
+        <div class="top-right">
+
+            <h1>Sign In</h1>
+            <form action="/api/login" method="POST">
+                <div class="input-field">
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input-field">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="btn">
+                    <p class="remember"><input type="checkbox" name="remember" id="remember" value="yes">
+                    <label for="remember">Remember Me</label></p>
+                    <input type="submit" value="LOGIN">
+                </div>
+                
+            </form>
+            <div class="btn">
+                <label for="register">Register Here</label>
+                <a href="register"> Register Here </a>
+            </div>
+    
+        </div>
+    </div>
+
+    <!-- <script src="js/main.js"></script> -->
+</body>
+</html>

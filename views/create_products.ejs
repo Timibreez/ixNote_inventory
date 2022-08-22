@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hero-bg">
+        <div class="top-right">
+
+            <h1>Sign UP</h1>
+            <form action="/api/createProduct" method="POST">
+                <div class="input-field">
+                    <label for="item">Item</label>
+                    <input type="text" name="item" id="item">
+                </div>
+                <div class="input-field">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price">
+                </div>
+                <div class="input-field">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" name="Quantity" id="Quantity">
+                </div>
+                <div class="input-field">
+                    <label for="date">Expiring Date</label>
+                    <input type="datetime-local" name="date" id="date">
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+    
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    background: #f7f7f7;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: montserrat;
+}
+
+/* hero style */
+.hero-bg {
+    background-image: url('/img/ixnote.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Login Form styling */
+.top-right {
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    
+    width: 250px;
+    background: #f7f8f8;
+}
+
+.dashboard {
+    position: absolute;
+    margin: 30vh 60vh;
+    border: 5px solid #4bb854;
+    text-align: center;
+}
+
+.top-right h1 {
+    text-align: left;
+    padding: 15px 0 10px 20px;
+    border-bottom: 1px solid silver;
+    font-size: 16px;
+}
+
+.top-right form {
+    padding: 0 30px 0 20px;
+    
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 1px solid silver;
+    margin: 20px 0;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-field label {
+    position: relative;
+    color: #68696c;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+.btn label {
+    color: #68696c;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.remember {
+    margin: -5px 0 20px 5px;
+}
+
+input[type = "submit"] {
+    float: right;
+    width: auto;
+    height: 24px;
+    border: 1px solid;
+    padding: 0 5px;
+    margin-top: -5px;
+    color: white;
+    background: #4bb854;
+    cursor: pointer;
+}
+
+.btn {
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .top-right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px;
+        background: #f7f8f8;
+        transform: translate(-50%, -50%);
+    }
+    .hero-bg {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
