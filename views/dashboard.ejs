@@ -45,6 +45,12 @@
                 Add Products
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#product">
+                <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                Products
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -70,9 +76,22 @@
         <!-- <h1><%= users.length %></h1> -->
   
         <h2>Products</h2>
-        <div class="table-responsive">
 
+        <!-- <ul><%= products.length %></ul> -->
+        <div id="product">
+          <ul>
+            <% products.forEach((product)=> {%>
+              <% console.log("Products: ", product); %>
+            <li>
+              <h4><%= product.item %></h4>
+              <h4><%= product.price %></h4>
+              <h4><%= product.quantity %></h4>
+              <h5><%= product.expiringDate %></h5>
+            </li>
+          <% }) %>
+          </ul>
         </div>
+
       </main>
     </div>
   </div>

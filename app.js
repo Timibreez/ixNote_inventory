@@ -30,34 +30,32 @@ mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).th
         app.use('/api/auth', authRoute)
         app.use('/api/products', productRoute)
 
-        // app.get('/dashboard', (req, res) => {
-        //     User.find({}, (err, users) => {
+        // Load Dashboard
+        app.get('/dashboard', async (req, res) => {
+            try {
+                const users = await User.find();
+                const products = await  Products.find();
 
-        //         const userMap = {};
-          
-        //         users.forEach((user) => {
-        //             userMap[user._id] = user;
-        //         });
-          
-        //         res.render('/dashboard', {userMap});  
-        //     });
-        // });
+            res.render('dashboard', {users, products});
 
-        app.get('/dashboard', (req, res) => {
-            User.find({}, (err, users) => {
-                res.render('dashboard', {users: users});
-            })
+            } catch (err) {
+               return  res.status(400).send(
+                err
+               )
+            }
         })
 
-        // Login Route
+        // Load Login
         app.get('/', (req, res) => {
             res.render('index', {title: 'IXNote Enterprise | Login'})
         })
 
+        // load Registration Page
         app.get('/register', (req, res) => {
             res.render('register', {title: 'IXNote Enterprise | Register'})
         })
 
+        // Load Product Creation Page
         app.get('/add_product', (req, res) => {
             res.render('create_products', {title: 'IXNote Enterprise | Add Products'})
         })
