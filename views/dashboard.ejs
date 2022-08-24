@@ -10,11 +10,11 @@
 <body>
     
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Company name</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">iXNote Ltd</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+    <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
         <a class="nav-link px-3" href="#">Sign out</a>
@@ -57,16 +57,16 @@
   
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
+          <h1 class="h2" style="margin: auto;" >Dashboard</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> -->
             </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
               <span data-feather="calendar" class="align-text-bottom"></span>
               This week
-            </button>
+            </button> -->
           </div>
         </div>
   
@@ -75,21 +75,28 @@
         <input type="hidden" name="users" value="<%= users.length %>" id="users">
         <!-- <h1><%= users.length %></h1> -->
   
-        <h2>Products</h2>
-
-        <!-- <ul><%= products.length %></ul> -->
-        <div id="product">
-          <ul>
-            <% products.forEach((product)=> {%>
-              <% console.log("Products: ", product); %>
-            <li>
-              <h4><%= product.item %></h4>
-              <h4><%= product.price %></h4>
-              <h4><%= product.quantity %></h4>
-              <h5><%= product.expiringDate %></h5>
-            </li>
+        <h2 style="margin: auto;" >Products</h2>
+        
+        <div class="row">
+          <% products.forEach((product) => {%> 
+          <div class="col-sm-3">
+            
+            <div id="product" class="card" style="width: 18rem;">
+              
+              <img class="card-img-top" src="img/new.jpg" alt="Card image cap">
+              
+              <div class="card-body">
+                <h5 class="card-title">Card Name: <%= product.item %></h5>
+                <h5 class="card-title">Card Price: <%= product.price %></h5>
+                <h5 class="card-title">Card Quantity: <%= product.quantity %></h5>
+                <p class="card-text"><%= product.expiringDate %></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              
+            </div>
+            
+          </div>
           <% }) %>
-          </ul>
         </div>
 
       </main>

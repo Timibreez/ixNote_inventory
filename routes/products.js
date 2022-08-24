@@ -8,29 +8,29 @@ router.post('/createProduct', (req, res) => {
     const quantity = req.body.quantity
     const expiringDate = req.body.expiringDate
 
-    const exp = new Date(expiringDate);
-    const now = new Date(Date.now())
+    // const exp = new Date(expiringDate);
+    // const now = new Date(Date.now())
 
-    console.log("Date.now: ", now);
-    console.log("expiringDate: ", exp);
+    // console.log("Date.now: ", now);
+    // console.log("expiringDate: ", exp);
     // const expDate = new Date(now  - exp);
-    const expDate =  exp - now
-    console.log("expiringDateFinal: ", expDate);
+    // const expDate =  exp - now
+    // console.log("expiringDateFinal: ", expDate);
 
-    // const newProduct = new Products()
+    const newProduct = new Products()
 
-    // newProduct.item = item
-    // newProduct.price = price
-    // newProduct.quantity = quantity
-    // newProduct.expiringDate = expiringDate
+    newProduct.item = item
+    newProduct.price = price
+    newProduct.quantity = quantity
+    newProduct.expiringDate = expiringDate
 
-    // newProduct.save((err, savedProduct) => {
-    //     if (err) {
-    //         console.log(err)
-    //         return res.status(500).send(err)
-    //     }
-    //     return res.status(200).redirect('/dashboard')
-    // })
+    newProduct.save((err, savedProduct) => {
+        if (err) {
+            console.log(err)
+            return res.status(500).send(err)
+        }
+        return res.status(200).redirect('/dashboard')
+    })
 })
 
 module.exports = router

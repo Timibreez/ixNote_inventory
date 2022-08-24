@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
     item: {type: String, unique: true, required: true},
+    // img: {data: Buffer, type: String},
     price: {type: Number, required: true},
     quantity: {type: Number, required: true},
     expiringDate: {type: Date}
