@@ -3,18 +3,47 @@
   
     // feather.replace({ 'aria-hidden': 'true' })
 
-    var ctx = document.getElementById('myChart')
+    const ctx = document.getElementById('myChart').getContext('2d')
     // let user = document.getElementById('users').val()
 
-    var user = document.getElementById('users').value
-   
-    var myChart = new Chart(ctx, {
+    const user = document.getElementById('users').value
+    const product = document.getElementById('products').value
+
+    const labels = ['Users', 'Products']
+    const colors = ['blue', 'red', 'green']
+
+    const data = {
+        labels: labels,
+        
+        datasets: [{label: 'Present Company Information', backgroundColor: colors, data: [user, product, 0]}]
+    }
+
+    const config = {
         type: 'bar',
-        data: {
-            labels: ['Users'],
-            datasets: [{label: 'Number of Users', data: [user]}]
-        },
-    })
+        data: data,
+        options: {}
+    }
+
+    const myChart = new Chart(
+        ctx,
+        config
+    )
+   
+    // const myChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Users', 'Products',],
+    //         backgroundColor: ['green', 'blue'],
+    //         datasets: [{label: 'Present Company Information', data: [user, product]}]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // })
   
   })()
 
