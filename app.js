@@ -39,6 +39,7 @@ mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).th
             res.render('dashboard', {users, products});
 
             } catch (err) {
+                
                return  res.status(400).send(
                 err
                )

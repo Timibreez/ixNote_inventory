@@ -4,24 +4,25 @@
     // feather.replace({ 'aria-hidden': 'true' })
 
     const ctx = document.getElementById('myChart').getContext('2d')
-    const productArray = []
-    const quantityArray = []
-
     const user = document.getElementById('users').value
     const products = document.getElementById('products').value
 
-    products.map(product => {
-        productArray.push(product.item)
-        quantityArray.push(product.quantity)
-    })
+    // for(const property in products){
+    //     console.log(`${property}: ${products[property]}`);
+    // }
 
-    const labels = productArray
-    const colors = ['blue', 'red', 'green', 'orange', 'purple']
+    // products.map(product => {
+    //     productArray.push(product.item)
+    //     quantityArray.push(product.quantity)
+    // })
+    // console.log('quantityArray:', quantityArray)
+    const labels = ['Users', 'Products']
+    const colors = ['blue', 'red', 'green']
 
     const data = {
         labels: labels,
         
-        datasets: [{label: 'Available Items', backgroundColor: colors, data: quantityArray}]
+        datasets: [{label: 'Available Items', backgroundColor: colors, data: [user, products, 0]}]
     }
 
     const config = {
