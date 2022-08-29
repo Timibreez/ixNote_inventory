@@ -59,18 +59,11 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2" style="margin: auto;" >Dashboard</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group me-2">
-              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> -->
-            </div>
-            <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar" class="align-text-bottom"></span>
-              This week
-            </button> -->
+            <div class="btn-group me-2"></div>
           </div>
         </div>
   
-        <canvas class="my-4 w-100" id="myChart" width="1000" height="300"></canvas>
+        <canvas class="my-4 w-50" id="myChart" width="1000" height="200" style="margin: auto;"></canvas>
         <!-- <canvas class="my-4 w-100" id="myChart" width="800" height="300"></canvas> -->
         <input type="hidden" name="users" value="<%= users.length %>" id="users">
         <input type="hidden" name="products" value="<%= products.length %>" id="products">
@@ -87,11 +80,11 @@
               <img class="card-img-top" src="img/new.jpg" alt="Card image cap">
               
               <div class="card-body">
-                <h5 class="card-title">Card Name: <%= product.item %></h5>
-                <h5 class="card-title">Card Price: <%= product.price %></h5>
-                <h5 class="card-title">Card Quantity: <%= product.quantity %></h5>
+                <h5 class="card-title">Name: <%= product.item %></h5>
+                <h5 class="card-title">Price: <%= product.price %></h5>
+                <h5 class="card-title">Quantity: <%= product.quantity %></h5>
                 <p class="card-text"><%= product.expiringDate %></p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
               </div>
               
             </div>

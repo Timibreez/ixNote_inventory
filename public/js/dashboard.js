@@ -28,7 +28,22 @@
     const config = {
         type: 'bar',
         data: data,
-        options: {}
+        options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'bottom',
+                    ticks: {
+                        precision: 0
+                    }
+                },
+                y: {
+                    ticks: {
+                        precision: 0
+                    }
+                }
+            }
+        }
     }
 
     const myChart = new Chart(
