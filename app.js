@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 const bodyparser = require('body-parser')
 const session = require('express-session')
 const {v4: uuidv4} = require('uuid')
@@ -62,7 +62,7 @@ mongoose.connect('mongodb://localhost:27017/ixnote', {useNewUrlParser: true}).th
         })
 
         app.listen(port, () => {
-            console.log('listening to the server on http://localhost:3000')
+            console.log('listening to the server on http://localhost:5000')
         })
     }
 ).catch((err) => {
